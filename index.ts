@@ -26,7 +26,7 @@ namespace Chennyl {
         }
 
         interface IMessageCallback {
-            (event, args): void;
+            (event: IMessageEvent, args: IMessageArgs): void;
         }
 
         export class SlideMessage {

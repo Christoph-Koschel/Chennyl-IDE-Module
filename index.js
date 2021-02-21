@@ -1,6 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Chennyl = void 0;
 var Chennyl;
 (function (Chennyl) {
     var Settings;
@@ -77,17 +75,5 @@ var Chennyl;
         }());
         Message.SlideMessage = SlideMessage;
     })(Message = Chennyl.Message || (Chennyl.Message = {}));
-})(Chennyl = exports.Chennyl || (exports.Chennyl = {}));
-// TODO unmark this
-// declare module 'chennyl-IDE' {
-//     export = Chennyl;
-// }
-//
-// declare module 'chennyl-IDE/settings' {
-//     export = Chennyl.Settings;
-// }
-//
-// declare module 'chennyl-IDE/message' {
-//     export = Chennyl.Message;
-// }
+})(Chennyl || (Chennyl = {}));
 //# sourceMappingURL=index.js.map
