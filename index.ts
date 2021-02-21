@@ -1,13 +1,11 @@
-export namespace Chennyl {
+namespace Chennyl {
     export namespace Settings {
         export function setFontSize(px: number): void {
-            getComputedStyle(document.documentElement).setProperty("--font-size",px + "px");
+            getComputedStyle(document.documentElement).setProperty("--font-size", px + "px");
         }
 
         export function getFontSize(): number {
-            return parseFloat(getComputedStyle(document.documentElement).
-                        getPropertyValue("--font-size").
-                        replace("px","")
+            return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--font-size").replace("px", "")
             );
         }
     }
@@ -16,6 +14,7 @@ export namespace Chennyl {
 
         interface ISlideMessageEvent {
             on(): void;
+
             target: SlideMessage;
         }
 
@@ -37,11 +36,11 @@ export namespace Chennyl {
             private message: string;
             private type: "error" | "info" | "warning";
 
-            public constructor(message: string  = "", type: "error" | "info" | "warning") {
-                    this.hiding = true;
-                    this.message = message;
-                    this.type = type;
-                }
+            public constructor(message: string = "", type: "error" | "info" | "warning") {
+                this.hiding = true;
+                this.message = message;
+                this.type = type;
+            }
 
             public show(): void {
                 const html: HTMLElement = this.buildHTML();
@@ -61,7 +60,7 @@ export namespace Chennyl {
                 this.eventList.onMessage.push(callback);
             }
 
-            private static emit(event: "message",self: SlideMessage, args: ISlideMessageArgs): void {
+            private static emit(event: "message", self: SlideMessage, args: ISlideMessageArgs): void {
 
                 function runCallbacks(callbacks: Array<ISlideMessageCallback>) {
                     const event: ISlideMessageEvent = {
@@ -94,4 +93,8 @@ export namespace Chennyl {
             }
         }
     }
+}
+
+declare module "Chennyl-IDE" {
+    export = Chennyl
 }

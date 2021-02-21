@@ -1,6 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Chennyl = void 0;
 var Chennyl;
 (function (Chennyl) {
     var Settings;
@@ -10,9 +8,7 @@ var Chennyl;
         }
         Settings.setFontSize = setFontSize;
         function getFontSize() {
-            return parseFloat(getComputedStyle(document.documentElement).
-                getPropertyValue("--font-size").
-                replace("px", ""));
+            return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--font-size").replace("px", ""));
         }
         Settings.getFontSize = getFontSize;
     })(Settings = Chennyl.Settings || (Chennyl.Settings = {}));
@@ -74,5 +70,5 @@ var Chennyl;
         }());
         Message.SlideMessage = SlideMessage;
     })(Message = Chennyl.Message || (Chennyl.Message = {}));
-})(Chennyl = exports.Chennyl || (exports.Chennyl = {}));
+})(Chennyl || (Chennyl = {}));
 //# sourceMappingURL=index.js.map
