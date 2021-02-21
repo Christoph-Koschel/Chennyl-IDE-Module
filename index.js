@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Chennyl = void 0;
 var Chennyl;
 (function (Chennyl) {
     var Settings;
@@ -32,12 +34,6 @@ var Chennyl;
                 });
                 this.hiding = false;
             };
-            SlideMessage.prototype.hide = function () {
-                this.hiding = true;
-            };
-            SlideMessage.prototype.isHide = function () {
-                return this.hiding;
-            };
             SlideMessage.prototype.setMessage = function (message) {
                 this.message = message;
             };
@@ -63,6 +59,9 @@ var Chennyl;
             SlideMessage.prototype.buildHTML = function () {
                 var div = document.createElement("div");
                 div.style.padding = "2rem";
+                div.style.position = "fixed";
+                div.style.right = "20px";
+                div.style.bottom = "20px";
                 var p = document.createElement("p");
                 p.innerHTML = this.message;
                 div.appendChild(p);
@@ -75,5 +74,5 @@ var Chennyl;
         }());
         Message.SlideMessage = SlideMessage;
     })(Message = Chennyl.Message || (Chennyl.Message = {}));
-})(Chennyl || (Chennyl = {}));
+})(Chennyl = exports.Chennyl || (exports.Chennyl = {}));
 //# sourceMappingURL=index.js.map
