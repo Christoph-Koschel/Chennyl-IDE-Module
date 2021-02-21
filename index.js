@@ -19,9 +19,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.message = exports.settings = void 0;
+exports.Message = exports.Settings = void 0;
 var _message = __importStar(require("./message"));
 var _settings = __importStar(require("./settings"));
-exports.settings = _settings;
-exports.message = _message;
+exports.Settings = _settings;
+exports.Message = _message;
 //# sourceMappingURL=index.js.map
