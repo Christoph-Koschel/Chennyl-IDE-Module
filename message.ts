@@ -5,7 +5,6 @@ interface ISlideMessageEvent {
 }
 
 interface ISlideMessageArgs {
-    html: string;
     message: string;
     type: "error" | "info" | "warning";
 }
@@ -29,9 +28,7 @@ export class SlideMessage {
     }
 
     public show(): void {
-        const html: string = this.buildHTML();
         SlideMessage.emit("message", this, {
-            html: html,
             message: this.message,
             type: this.type
         });
@@ -67,12 +64,6 @@ export class SlideMessage {
             case "message":
                 runCallbacks(this.eventList.onMessage);
         }
-    }
-
-    private buildHTML(): string {
-        return `<div class="messageNotification" style="position: fixed; bottom: 20px; right: 20px; padding: 2rem">
-                    <p>${this.message}</p>
-                </div>`;
     }
 }
 

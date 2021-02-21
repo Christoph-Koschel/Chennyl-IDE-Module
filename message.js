@@ -9,9 +9,7 @@ var SlideMessage = /** @class */ (function () {
         this.type = type;
     }
     SlideMessage.prototype.show = function () {
-        var html = this.buildHTML();
         SlideMessage.emit("message", this, {
-            html: html,
             message: this.message,
             type: this.type
         });
@@ -41,9 +39,6 @@ var SlideMessage = /** @class */ (function () {
             case "message":
                 runCallbacks(this.eventList.onMessage);
         }
-    };
-    SlideMessage.prototype.buildHTML = function () {
-        return "<div style=\"position: fixed; bottom: 20px; right: 20px; padding: 2rem\">#\n                    <p>" + this.message + "</p>\n                </div>";
     };
     SlideMessage.eventList = {
         onMessage: [],
