@@ -5,7 +5,7 @@ interface ISlideMessageEvent {
 }
 
 interface ISlideMessageArgs {
-    html: HTMLElement;
+    html: string;
     message: string;
     type: "error" | "info" | "warning";
 }
@@ -29,7 +29,7 @@ export class SlideMessage {
     }
 
     public show(): void {
-        const html: HTMLElement = this.buildHTML();
+        const html: string = this.buildHTML();
         SlideMessage.emit("message", this, {
             html: html,
             message: this.message,
@@ -40,6 +40,10 @@ export class SlideMessage {
 
     public setMessage(message: string): void {
         this.message = message;
+    }
+
+    public setType(type: "error" | "info" | "warning") {
+        this.type = type;
     }
 
     public static on(even: "message", callback: ISlideMessageCallback): void {
@@ -65,17 +69,10 @@ export class SlideMessage {
         }
     }
 
-    private buildHTML(): HTMLElement {
-        let div = document.createElement("div");
-        div.style.padding = "2rem";
-        div.style.position = "fixed";
-        div.style.right = "20px";
-        div.style.bottom = "20px";
-        let p = document.createElement("p");
-        p.innerHTML = this.message;
-
-        div.appendChild(p);
-        return div;
+    private buildHTML(): string {
+        return `<div style="position: fixed; bottom: 20px; right: 20px; padding: 2rem">#
+                    <p>${this.message}</p>
+                </div>`;
     }
 }
 

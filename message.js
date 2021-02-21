@@ -20,6 +20,9 @@ var SlideMessage = /** @class */ (function () {
     SlideMessage.prototype.setMessage = function (message) {
         this.message = message;
     };
+    SlideMessage.prototype.setType = function (type) {
+        this.type = type;
+    };
     SlideMessage.on = function (even, callback) {
         this.eventList.onMessage.push(callback);
     };
@@ -40,15 +43,7 @@ var SlideMessage = /** @class */ (function () {
         }
     };
     SlideMessage.prototype.buildHTML = function () {
-        var div = document.createElement("div");
-        div.style.padding = "2rem";
-        div.style.position = "fixed";
-        div.style.right = "20px";
-        div.style.bottom = "20px";
-        var p = document.createElement("p");
-        p.innerHTML = this.message;
-        div.appendChild(p);
-        return div;
+        return "<div style=\"position: fixed; bottom: 20px; right: 20px; padding: 2rem\">#\n                    <p>" + this.message + "</p>\n                </div>";
     };
     SlideMessage.eventList = {
         onMessage: [],
