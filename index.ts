@@ -1,4 +1,4 @@
-export namespace Chennyl { // TODO delete export
+namespace Chennyl {
     export namespace Settings {
         export function setFontSize(px: number): void {
             getComputedStyle(document.documentElement).setProperty("--font-size",px + "px");
@@ -101,15 +101,15 @@ export namespace Chennyl { // TODO delete export
         }
     }
 }
-// TODO unmark this
-// declare module 'chennyl-IDE' {
-//     export = Chennyl;
-// }
-//
-// declare module 'chennyl-IDE/settings' {
-//     export = Chennyl.Settings;
-// }
-//
-// declare module 'chennyl-IDE/message' {
-//     export = Chennyl.Message;
-// }
+
+declare module 'chennyl-IDE' {
+    export = Chennyl;
+}
+
+declare module 'chennyl-IDE/settings' {
+    export = Chennyl.Settings;
+}
+
+declare module 'chennyl-IDE/message' {
+    export = Chennyl.Message;
+}
