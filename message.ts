@@ -1,5 +1,4 @@
 export namespace Message {
-
     interface ISlideMessageEvent {
         on(): void;
 
