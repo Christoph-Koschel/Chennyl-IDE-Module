@@ -70,7 +70,7 @@ export class SlideMessage {
     }
 
     private buildHTML(): string {
-        return `<div style="position: fixed; bottom: 20px; right: 20px; padding: 2rem">#
+        return `<div class="messageNotification" style="position: fixed; bottom: 20px; right: 20px; padding: 2rem">
                     <p>${this.message}</p>
                 </div>`;
     }
